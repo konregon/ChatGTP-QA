@@ -1,0 +1,37 @@
+// Define some variables we'll use for our buttons
+$button-bg-color: #333;
+$button-text-color: #fff;
+$button-padding: 0.5rem 1rem;
+$button-border-radius: 4px;
+
+// Define some styles for our buttons
+button {
+    background-color: $button-bg-color;
+    color: $button-text-color;
+    padding: $button-padding;
+    border-radius: $button-border-radius;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($button-bg-color, 10%);
+    }
+
+    &.primary {
+        background-color: #a86538;
+
+        &:hover {
+            background-color: darken(#a86538, 10%);
+        }
+    }
+
+    &.secondary {
+        background-color: #fff;
+        color: $button-bg-color;
+        border: 2px solid $button-bg-color;
+
+        &:hover {
+            background-color: $button-bg-color;
+            color: #fff;
+        }
+    }
+}
