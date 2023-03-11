@@ -1,94 +1,112 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+nav {
+  background: steelblue;
+  height: 80px;
+  width: 100%;
+  display: flex;
+}
+
+label.logo {
+  color: #fff;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+
+a.active,
+a:hover {
+  background-color: #1b9bff;
+  transition: .5s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+
+
+@media(max-width: 968px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
   }
-  
-  .navbar {
-    background-color: #333;
+
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+
+  ul {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 9999;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: 0;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
   }
-  
-  .logo {
-    color: #fff;
-    font-size: 24px;
+
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
   }
-  
-  .nav-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    margin: 0 10px;
-  }
-  
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-  }
-  
-  .nav-links li a:hover {
-    color: #ffd700;
-  }
-  
-  .burger {
-    display: none;
-    cursor: pointer;
-  }
-  
-  .burger .line {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px;
-    transition: all 0.3s;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .nav-links {
-      display: none;
-    }
-    .burger {
-      display: block;
-    }
-  }
-  
-  .nav-active {
-    display: flex !important;
-    flex-direction: column;
-  }
-  
-  .nav-active li {
-    margin: 10px 0;
-  }
-  
-  .nav-active li a {
+
+  nav ul li a {
     font-size: 20px;
   }
-  
-  .rotate .line:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
+
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
   }
-  
-  .rotate .line:nth-child(2) {
-    opacity: 0;
+
+  #check:checked~ul {
+    left: 0;
   }
-  
-  .rotate .line:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-  
+}
